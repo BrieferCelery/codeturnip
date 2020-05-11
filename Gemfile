@@ -54,3 +54,13 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.7"
+
+gem "cancancan", "~> 3.1"
+
+gem "rolify", "~> 5.2"
+
+gem "bootstrap_form", "~> 4.5"
+
+gem "bootstrap", "~> 4.4"
+
+gem "jquery-rails", "~> 4.4"
