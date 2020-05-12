@@ -1,0 +1,12 @@
+<nav class="ui secondary pointing menu">
+    <% if user_signed_in? %>
+        <div id="logout"><%= link_to "logout", destroy_user_session_path, method: "delete",
+        class: "top-nav-link" %></div>
+        <div id="username"> <%= current_user.email %>
+        </div>
+    <% else %>
+    <div> <%= link_to "login", new_user_session_path, class: "top-nav-link" %> | </div>
+
+    <div> <%= link_to "sign up", new_registration_path, class: "top-nav-link" %></div>
+<%end%>
+</nav>
