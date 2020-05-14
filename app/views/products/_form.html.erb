@@ -26,6 +26,10 @@
     <%= form.number_field :supply %>
   </div>
 
+  <p>
+      <%= form.label :picture %>
+      <%= form.file_field :picture, accept: "image/png,image/gif,image/jpeg,image/jpg" %>
+  </p>
   <div class="actions">
     <%= form.submit :class => "btn btn-primary" %>
   </div>
