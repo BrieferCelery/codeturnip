@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<%= image_tag @product.picture, width: 120%>
+
+
+<h1>
   <strong>Name:</strong>
   <%= @product.name %>
-</p>
+</h1>
 
-<p>
+<h2>
   <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  $<%= @product.price %>
+</h2>
 
-<p>
-  <strong>Supply:</strong>
+<h3>
+  <strong>In stock:</strong>
   <%= @product.supply %>
-</p>
+</h3>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

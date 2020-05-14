@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    # @product = Product.find(params[:id])
   end
 
   # GET /products/new
@@ -26,11 +27,12 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
+    @product.picture.attach(params[:product][:picture])
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
+        # redirect_to product_path(@product), notice: 'Product was successfully created.'
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
