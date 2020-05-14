@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   # GET /products
   # GET /products.json
@@ -65,6 +66,14 @@ class ProductsController < ApplicationController
   end
 
   private
+
+    def authorize
+      if !current_user.has_role?(:admin)
+        flash[:alert] = "You shall not pass!"
+        redirect_to root_path
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
