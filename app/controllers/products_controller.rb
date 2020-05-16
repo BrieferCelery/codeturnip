@@ -68,11 +68,21 @@ class ProductsController < ApplicationController
   private
 
     def authorize
-      if !current_user.has_role?(:admin)
-        flash[:alert] = "You shall not pass!"
+      if !user_signed_in?
+        flash[:alert] = "Please sign up in order to visit the page"
+        redirect_to new_user_session_path
+      else
         redirect_to root_path
       end
     end
+    # def authorize
+    #   if !current_user.has_role?(:admin)
+    #     flash[:alert] = "You shall not pass!"
+    #     redirect_to root_path
+    #   else
+    #     redirect_to root_path
+    #   end
+    # end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_product
