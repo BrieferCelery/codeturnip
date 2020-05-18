@@ -71,8 +71,6 @@ class ProductsController < ApplicationController
       if !user_signed_in?
         flash[:alert] = "Please sign up in order to visit the page"
         redirect_to new_user_session_path
-      else
-        redirect_to root_path
       end
     end
     # def authorize
