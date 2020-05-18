@@ -1,2 +1,21 @@
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<h1>Your Order :)</h1>
+
+  <%= image_tag @product.picture, width: 120%>
+
+
+<h1>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</h1>
+
+<h2>
+  <strong>Price:</strong>
+  $<%= @product.price %>
+</h2>
+
+<h3>
+  <strong>In stock:</strong>
+  <%= @product.supply %>
+</h3>
+
+<button id="pay-now">Checkout item</button>
