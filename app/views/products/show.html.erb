@@ -18,5 +18,7 @@
   <%= @product.supply %>
 </h3>
 
+<%= link_to "Buy now", new_order_path %>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
