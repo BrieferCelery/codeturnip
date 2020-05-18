@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
-    has_many :products_categories
-    has_many :products, through: :products_categories
+    belongs_to :product
+    # delegate :company, :to => :employee, :allow_nil => true
 end

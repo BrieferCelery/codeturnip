@@ -71,8 +71,7 @@ class ProductsController < ApplicationController
       if !user_signed_in?
         flash[:alert] = "Please sign up in order to visit the page"
         redirect_to new_user_session_path
-      elsif !current_user.has_role?(:admin)
-        flash[:alert] = "sorry you need an admin role to do this"
+      else
         redirect_to root_path
       end
     end

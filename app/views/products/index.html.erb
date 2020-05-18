@@ -19,9 +19,13 @@
         <td> <%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.supply %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? && current_user.has_role?(:admin)%>
+          <td><%= link_to 'Product details', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+         <td><%= link_to 'Product details', product %></td>
+         <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +33,6 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<% if user_signed_in? && current_user.has_role?(:admin)%>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>
