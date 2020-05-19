@@ -21,6 +21,8 @@ class OrdersController < ApplicationController
     )
   end
 
+  # cancelling order on the stripe website redirects to this route
+  # handle this by redirecting to the root
   def cancel
     redirect_to root_path
   end

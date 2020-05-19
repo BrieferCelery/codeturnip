@@ -1,6 +1,6 @@
 <h1>Your Order :)</h1>
 
-  <%= image_tag @product.picture, width: 120%>
+  <%= image_tag @product.picture, width: 120 if @product.picture.attached? %>
 
 
 <h1>
