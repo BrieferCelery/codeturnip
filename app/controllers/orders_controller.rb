@@ -1,8 +1,10 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+
   def new
     @product = Product.find(params[:product_id])
 
+    #Setting a stripe session
     Stripe.api_key = Rails.application.credentials.dig(:stripe, :secret_key)
     @session = Stripe::Checkout::Session.create(
     payment_method_types: ['card'],
@@ -17,5 +19,9 @@ class OrdersController < ApplicationController
     success_url: 'http://localhost:3000/orders/complete',
     cancel_url: 'http://localhost:3000/orders/cancel',
     )
+  end
+
+  def cancel
+    redirect_to root_path
   end
 end

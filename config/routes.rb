@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # get 'orders/new'
-  get 'user_product_list/index'
+  # redirects to stripe
+  get 'orders/new'
+  # redirects to home page on cancel
+  get 'orders/cancel'
+
   devise_for :users
   resources :products
   resources :orders, only: [:new]
