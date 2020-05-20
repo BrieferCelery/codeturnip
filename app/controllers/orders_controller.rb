@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     quantity: 1,
     }],
     success_url: 'http://localhost:3000/orders/complete',
-    cancel_url: 'http://localhost:3000/orders/cancel',
+    cancel_url: 'https://code-turnip.herokuapp.com/orders/cancel',
     )
   end
 
