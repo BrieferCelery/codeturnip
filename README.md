@@ -51,8 +51,30 @@ To give a small bakery business an online presence, for users to buy products fr
 - As a user I should be able to register an account
 - As a user I should be able to purchase a product
 - As a user I should be able to browse the website easily
+- As an admin I should be able to create new products
+- As an admin I should be able to delete a product
+- As an admin I should be able to update a product
 
+# R13 Wireframes for the app
 
+![Mobile wireframe](docs/mobile-wireframe.png)
+![Dekstop wireframe](docs/desktop-wireframe1.png)
+![Desktop2 wireframe](docs/desktop-wireframe2.png)
 
+# R14 Entity Relationship Diagram
+![ERD](docs/ERD.png)
 
+# R15 Explain the different high-level components (abstractions) in your app
+This application was built using the Model-View-Controller(MVC) architecture patten. The app breakdown is as follows -
 
+## Product:
+The product model handles the connection between the user model and the product model
+
+## User:
+
+The user model was automatically created by [Devise](https://github.com/heartcombo/devise) a gem that handles user authentication. The user model creates a connection to the product so that a user can buy a product. User also connects to the role model to handle special user roles(admin).
+
+## Role: 
+The role model was created automatically by the gem [Rolify](https://github.com/RolifyCommunity/rolify). The role model connects to the user model to apply special user priveledges.
+
+## Ability

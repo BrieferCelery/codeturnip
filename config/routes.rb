@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'pages/about'
-  get 'pages/contact'
+  
   # redirects to stripe
   get 'orders/new'
   # redirects to home page on cancel
   get 'orders/cancel'
+
+  # get about page
+  get 'pages/about'
+  # get contact page
+  get 'pages/contact'
 
   devise_for :users
   resources :products
