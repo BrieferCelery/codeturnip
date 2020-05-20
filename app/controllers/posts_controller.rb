@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize, only: [:edit, :destroy, :update]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   # GET /posts/1
@@ -63,6 +64,14 @@ class PostsController < ApplicationController
   end
 
   private
+  #
+  def authorize
+    if user_signed_in? && !current_user.has_role?(:admin)
+      flash[:alert] = "Please sign up in order to visit the page"
+      redirect_to new_user_session_path
+    end
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
