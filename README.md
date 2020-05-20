@@ -1,28 +1,58 @@
 # Code Turnip
 
-# Detail any third party services that your App will use
+# R7 Identification of the problem you are trying to solve by building this particular marketplace app.
+Having a website for your business is essential in today's business environment. These website give the business owner access to a broader market and allow customer's to find their business online. Many small business owners work long hours and do not possess the skills or knowledge on managing an online presence. T's bakery is a web application that provides a small business owner with a simple solution for managing the online presence of a bakery business.
 
-# Explain the different high-level components (abstractions) in your App
+# R8 Why is it a problem that needs solving?
 
-# Identify the problem you’re trying to solve by building this particular marketplace App? Why is it a problem that needs solving?
+As mentioned above having an online presence is an essential part of running a small business. Without a website the business is missing out on access to customers who are searching for a bakery close to them and the ability to sell your products online
 
-# Describe your project’s models in terms of the relationships (active record associations) they have with each other
+# R9 R9 A link (URL) to your deployed app (i.e. website)
 
-# Discuss the database relations to be implemented
+[T's Bakery](https://code-turnip.herokuapp.com/)
 
-# Provide your database schema design
+# R10 A link to your GitHub repository (repo)
 
-# Provide User stories for your App
+[Github link](https://github.com/BrieferCelery/codeturnip)
 
-# Provide Wireframes for your App
+# R11 Description of your marketplace app (website), including:
 
-# Describe the way tasks are planned and tracked in your project
+## Purpose: 
+To give a small bakery business an online presence, for users to buy products from this small bakery business and the ability to manage their products online.
 
-# ERD provided represents a normalised database model
+## Functionality / features: 
+- User sign up/ registration
+- administrative users are able to perform CRUD operations on the products
+- Users can create and order items
 
-## 6.0 to >5.0 pts HD
-- Meets D with no duplication and ideal definition of entities.
-## 5.0 to >4.0 pts D
-ERD is complete with appropriately defined entities (models each serve a single purpose and appropriate fields). There may be a little duplication.
+
+
+## Site map
+
+![Map](/docs/Sitemap.png)
+
+## Screenshots ## TODO
+
+## Target audience
+- People aged 18 and over looking for local dining establishments.
+
+## Tech Stack
+
+### Frontend
+- HTML5, Ruby on Rails, CSS3
+
+### Backend
+- Postgresql
+
+### Hosting
+- App is deployed on Heroku (www.heroku.com)
+
+# R12 User stories for your app
+- As a user I should be able to register an account
+- As a user I should be able to purchase a product
+- As a user I should be able to browse the website easily
+
+
+
 
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+  get 'pages/contact'
   # redirects to stripe
   get 'orders/new'
   # redirects to home page on cancel
