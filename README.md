@@ -30,7 +30,11 @@ To give a small bakery business an online presence, for users to buy products fr
 
 ![Map](/docs/Sitemap.png)
 
-## Screenshots ## TODO
+## Screenshots
+
+![](docs/home.png)
+![](docs/login.png)
+![](docs/about.png)
 
 ## Target audience
 - People aged 18 and over looking for local dining establishments.
@@ -162,12 +166,6 @@ ActiveRecord::Schema.define(version: 2020_05_20_090417) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
