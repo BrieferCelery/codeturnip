@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :posts
   # redirects to stripe
   get 'orders/new'
   # redirects to home page on cancel

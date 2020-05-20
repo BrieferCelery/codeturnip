@@ -1,11 +1,26 @@
 <nav class="navbar navbar-light bg-light justify-content-between">
     <% if user_signed_in? %>
-    Welcome, <%= current_user.email %>
-    <div id="logout">
-    <%= link_to "Logout", destroy_user_session_path, method: "delete", class: "top-nav-link"%>
-    <div id= "username"> <%= current_user.email %></div>
+    
+    <div> 
+    <%= link_to "home", root_path%>
     </div>
+    
+    <p>
+        <%= link_to "about", pages_about_path%> |
+        <%= link_to "contact", pages_contact_path%>
+    </p>
+
+    
+    <div id="logout">
+        <%= link_to "Logout", destroy_user_session_path, method: "delete", class: "top-nav-link"%>
+        <div> Welcome, <%= current_user.email %></div>
+    </div>
+    
     <% else %>
+    <p>
+        <%= link_to "about", pages_about_path%>
+        <%= link_to "contact", pages_contact_path%>
+    </p>
     <p> 
     <%= link_to "login", new_user_session_path, class: "top-nav-link" %> |
     <%= link_to "signup", new_user_registration_path, class: "top-nav-link" %>
