@@ -1,7 +1,7 @@
 # Code Turnip
 
 # R7 Identification of the problem you are trying to solve by building this particular marketplace app.
-Having a website for your business is essential in today's business environment. These website give the business owner access to a broader market and allow customer's to find their business online. Many small business owners work long hours and do not possess the skills or knowledge on managing an online presence. T's bakery is a web application that provides a small business owner with a simple solution for managing the online presence of a bakery business.
+Having a website for your business is essential in today's business environment. Websites give the business owner access to a broader market and allow customer's to find their business online. Many small business owners work long hours and do not possess the skills or knowledge on managing an online presence. Kelvin's bakery is a web application that provides a small business owner with a simple solution for managing the online presence of a bakery business.
 
 # R8 Why is it a problem that needs solving?
 
