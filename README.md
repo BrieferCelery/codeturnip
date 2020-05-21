@@ -126,7 +126,7 @@ gem "stripe", "~> 5.22"
 # R17 Describe your projects models in terms of the relationships (active record associations) they have with each other
 
 - User has many products and posts
-- Post belongs to User
+- Post belongs to User and has one attached picture
 - Product has one attached picture
 - Role has many and belongs to many Users
 
@@ -134,7 +134,7 @@ gem "stripe", "~> 5.22"
 
 - Users table has no foreign key
 - Products table
-- Posts has one foreign key `user_id` to connect a post to a user
+- Posts has one foreign key `user_id` to connect a post to a user. Post also has one attached picture
 - Active storage table stores the image attached to each product and contains no foreign key
 - Roles table contains two foreign keys `user_id` and `role_id`
 - Users roles table is a joining table connecting the User and Role models and contains two foreign keys `user_id` and `role_id`.
