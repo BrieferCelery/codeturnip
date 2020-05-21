@@ -64,7 +64,7 @@ class PostsController < ApplicationController
   end
 
   private
-  #
+  # if user signed in and is not an admin redirect
   def authorize
     if user_signed_in? && !current_user.has_role?(:admin)
       flash[:alert] = "Please sign up in order to visit the page"
