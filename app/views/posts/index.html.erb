@@ -11,7 +11,7 @@
           <p><%= post.user.email%></p>
           <p><%= link_to "#{post.title}", post %></p>
           <p>
-          <%if user_signed_in? && post.user.id == current_user.id%>
+          <%if user_signed_in? && post.user.id == current_user.id || current_user.has_role?(:admin)%>
             <%= link_to "Edit", edit_post_path(post)%>
             <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>

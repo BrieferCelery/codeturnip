@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   #check if user has permission to edit and delete a post
   # if the current user is not the user that created the post redirect
   def check_permission
-    if current_user && @post.user == current_user
+    if current_user && @post.user == current_user || current_user.has_role?(:admin)
       return
     else
       redirect_to root_path
