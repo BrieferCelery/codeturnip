@@ -7,7 +7,9 @@
 <br>
 
 <div class="card" style="width: 18rem;">
+
   <div class="card-body">
+    <%= image_tag @post.picture, width: 120 if @post.picture.attached?%>
     <p><%= @post.user.email%></p>
     <p><%= @post.content%></p>
   </div>

@@ -142,7 +142,7 @@ gem "stripe", "~> 5.22"
 # R19 Provide your database schema design
 
 ```ruby
-ActiveRecord::Schema.define(version: 2020_05_20_090417) do
+ActiveRecord::Schema.define(version: 2020_05_20_081014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -185,7 +185,6 @@ ActiveRecord::Schema.define(version: 2020_05_20_090417) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
@@ -217,11 +216,7 @@ ActiveRecord::Schema.define(version: 2020_05_20_090417) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users"
   add_foreign_key "posts", "users"
-  add_foreign_key "products_categories", "categories"
-  add_foreign_key "products_categories", "products"
 end
 ```
 

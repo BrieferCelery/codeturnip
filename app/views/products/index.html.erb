@@ -2,24 +2,26 @@
 
 <h1>Products</h1>
 
-<div class="card" style="width: 18rem;">
-  <%@products.each do  |product| %>
-  <div class="card-img-top">
-    <%= image_tag product.picture, width: 120 if product.picture.attached?  %>
+
+<div class="container" style="display: flex; padding: 2rem; margin: 2rem;">
+<% @products.each do |product|%>
+  <div class="card" style="width: 18rem; padding:2rem;">
+    <%= image_tag product.picture, width: 120, :align => "center" if product.picture.attached? %> 
+      <div class="card-body row text-center">
+        <h5 class="card-title"><%= product.name.upcase %></h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p>$ <%= product.price%></p> | 
+        <!--Check if user is signed in and if so display-->
+          <% if user_signed_in? && current_user.has_role?(:admin)%>
+            <p><%= link_to 'Product details', product %></p> |
+            <p><%= link_to 'Edit', edit_product_path(product) %></p> |
+            <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <% else %>
+            <p><%= link_to 'Product details', product %></p>
+          <% end %>
+    </div>
   </div>
-  <div class="card-body row text-center">
-      <h5 class="card-title"><%= product.name.upcase %></h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <!--Check if user is signed in and if so display-->
-        <% if user_signed_in? && current_user.has_role?(:admin)%>
-          <p><%= link_to 'Product details', product %></p> |
-          <p><%= link_to 'Edit', edit_product_path(product) %></p> |
-          <p><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        <% else %>
-         <p><%= link_to 'Product details', product %></p>
-         <% end %>
-   </div>
-   <% end %>
+  <% end %>
 </div>
 
 <% if user_signed_in? && current_user.has_role?(:admin)%>

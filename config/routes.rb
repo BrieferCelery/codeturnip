@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-  get 'comments/new'
   resources :posts
   # redirects to stripe
   get 'orders/new'

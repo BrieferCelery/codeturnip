@@ -3,17 +3,21 @@
 <h1>Posts</h1>
 <br>
 
-<div class="card" style="width: 18rem;">
+<div class="container" style="display: flex;">
   <% @posts.each do |post| %>
-    <div class="card-body">
-      <p><%= post.user.email%></p>
-      <p><%= link_to "#{post.title}", post %></p>
-      <p>
-        <%= link_to "Edit", edit_post_path(post)%>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </p>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag post.picture, width: 120 if post.picture.attached?%>
+        <div class="card-body">
+          <p><%= post.user.email%></p>
+          <p><%= link_to "#{post.title}", post %></p>
+          <p>
+          <%if user_signed_in? && post.user.id == current_user.id%>
+            <%= link_to "Edit", edit_post_path(post)%>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          </p>
     </div>
-
-<% end %>
+  </div>
+  <% end %>
 </div>
 <%= link_to 'New Post', new_post_path %>
