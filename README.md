@@ -1,4 +1,4 @@
-# Code Turnip
+# Kelvin's Bakery
 
 # R7 Identification of the problem you are trying to solve by building this particular marketplace app.
 Having a website for your business is essential in today's business environment. Websites give the business owner access to a broader market and allow customer's to find their business online. Many small business owners work long hours and do not possess the skills or knowledge on managing an online presence. Kelvin's bakery is a web application that provides a small business owner with a simple solution for managing the online presence of a bakery business.
@@ -7,7 +7,7 @@ Having a website for your business is essential in today's business environment.
 
 As mentioned above having an online presence is an essential part of running a small business. Without a website the business is missing out on access to customers who are searching for a bakery close to them and the ability to sell your products online
 
-# R9 R9 A link (URL) to your deployed app (i.e. website)
+# R9 A link (URL) to your deployed app (i.e. website)
 
 [Kelvin's Bakery](https://code-turnip.herokuapp.com/)
 
